@@ -1,7 +1,4 @@
 #!/bin/env bash
-
-# Contributor: Sarah Robichaud
-#
 WIN=$(xdotool getactivewindow getwindowname)
 
 CHROME="- Google Chrome"

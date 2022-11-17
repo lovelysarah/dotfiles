@@ -1,0 +1,25 @@
+[window]
+interval=repeat
+command=/home/lovely/.scripts/window_title.sh; sleep 0.1
+markup=pango
+
+[arch-update]
+command=/usr/lib/i3blocks/$BLOCK_NAME/$BLOCK_NAME
+interval=30
+markup=pango
+color=#000000
+background=#FF0055
+LABEL=Updates: 
+LABEL= SYSTEM_STATUS:
+
+[separator]
+
+[time]
+command=/usr/lib/i3blocks/$BLOCK_NAME/$BLOCK_NAME
+interval=1
+#TZ_FILE=~/.tz
+color=#FF0055
+background=#000000
+STRFTIME_FORMAT= %Y-%m-%d %H:%M 
+TZONES=$DEFAULT_TZ,Brazil/East,Australia/Brisbane,Asia/Calcutta
+TZ_LABELS=,Brazil,AU,Hyderabad
