@@ -27,11 +27,17 @@ Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 " CtrlP menu
 Plug 'ctrlpvim/ctrlp.vim'
+" Color hightlighting
+Plug 'brenoprata10/nvim-highlight-colors'
 " Theming
 Plug 'itchyny/lightline.vim'
-Plug 'thedenisnikulin/vim-cyberpunk'
+"Plug 'thedenisnikulin/vim-cyberpunk'
+Plug 'cocopon/iceberg.vim'
+
 call plug#end()
 
+
+lua require('nvim-highlight-colors').setup {}
 
 " Avoid syntax hl sync problems
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
@@ -46,6 +52,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set colorcolumn=80
+set so=8
 
 " Disable right-click menu
 set mouse=
@@ -54,10 +61,10 @@ set mouse=
 syntax on
 set termguicolors
 set encoding=UTF-8
-colorscheme cyberpunk
+colorscheme iceberg
 
 let g:lightline = {
-      \ 'colorscheme': 'cyberpunk'
+      \ 'colorscheme': 'iceberg'
 \  }
 
 " Enables cursor line position tracking:
@@ -124,7 +131,7 @@ endfunction
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 " Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 ":Prettier to format the active buffer
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
@@ -141,3 +148,4 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
   \ 'dir':'\v[\/](git|node_modules|public\/build)$'
   \ }
+
